@@ -11,10 +11,10 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>
-                <button data-toggle="modal" data-target="#modelId">Thêm người dùng</button>
-                {/* <ModalThemNguoiDung /> */}
+                {/* <button data-toggle="modal" data-target="#modelId">Thêm người dùng</button>
+                <ModalThemNguoiDung />
 
-                <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" /> {/*<Modal2 Component={} prop... />  */}
+                <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" /> <Modal2 Component={} prop... />  */}
             </div>
         )
     }
