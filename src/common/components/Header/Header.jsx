@@ -1,9 +1,10 @@
 import React from 'react';
 import './Header.scss';
+import Logo from '../../../Assets/img/fox.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-library.add( faBars )
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars,  faUserCircle } from '@fortawesome/free-solid-svg-icons';
+library.add( faBars, faUserCircle )
 
 
 export default function Header() {
@@ -30,14 +31,15 @@ export default function Header() {
   return (
     <section className="header">
       <div className="header__content"  id='content' >
-        <h1 className="header__title">The Fox</h1>
+
+        <img src={Logo} alt=""/>
         <ul className="header__menu" id='Hide'>
           <li><a href>Lịch Chiếu</a></li>
           <li><a href>Cụm Rạp</a></li>
           <li><a href>Tin Tức</a></li>
         </ul>
         <div className="header__button"  id='Hide2'>
-          <button>Login</button>
+        <a href className='header__login'><FontAwesomeIcon icon={faUserCircle} className='icon' size="2x"/> Đăng Nhập</a>
         </div>
         
         <FontAwesomeIcon icon={faBars} size="2x" className='bar' onClick={() => Menu()}/>
