@@ -32,18 +32,29 @@
   .header__menu {
     list-style: none;
     display: flex;
-    cursor: pointer;
     margin: 0;
    
   }
   .header__menu li {
     margin-right: 15px;
     padding: 10px;
+    cursor: pointer;
   }
   .header__menu li a {
     text-decoration: none;
-    font-family: "Lato", sans-serif;
     &:hover {
+      color: $orange;
+    }
+  }
+  .header__login{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: $gray;
+    .icon{
+      padding-right: 5px;
+    }
+    &:hover{
       color: $orange;
     }
   }
