@@ -1,0 +1,35 @@
+@import "../../../Variable.scss";
+@import "../../../Mixin.scss";
+
+
+.movie__item {
+  cursor: pointer;
+  &:hover {
+    p{
+      display: none;
+    }
+    button {
+      display: block;
+      color: white;
+      margin: 1rem 0;
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 5px;
+
+  }
+  p{
+    // font-size:18px;
+    margin:15px;
+    color: white;
+  }
+  button{
+
+    display: none;
+    width: 100%;
+    background-color: $orange;
+    
+   
+  }
+}

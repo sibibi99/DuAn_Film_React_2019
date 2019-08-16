@@ -19,6 +19,7 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-scroll": "^1.7.12",
     "redux": "^4.0.2",
     "redux-thunk": "^2.3.0"
   },

@@ -1,0 +1,101 @@
+.test{
+  
+$offset-padding-item: 40%;
+$offset-padding-wrap: 8%; // (width of ".owl-carousel") / 5 * 40%
+$bgc-owl-carousel: Aqua;
+$bgc-owl-stage-outer: AliceBlue;
+$bgc-item-odd: LightGreen;
+$bgc-item-even: LightBlue;
+$bdc-item-border: Brown;
+
+
+
+.owl-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 10px $offset-padding-wrap;
+  border: 2px solid $bgc-owl-carousel;
+  background-color: transparent;
+  overflow: hidden;
+  box-sizing: content-box;
+  
+  &:hover {
+    // background-color: $bgc-owl-carousel;
+  }
+  
+  .owl-stage-outer {
+    overflow: visible;
+    
+    &:hover {
+      background-color: $bgc-owl-stage-outer;
+    }
+    
+    // vertical centering border-line
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      right: 10px;
+      height: 1px;
+      background-color: #ccc;
+    }
+  }
+}
+
+.owl-stage {
+  height: 300px;
+}
+
+.owl-item {
+  float: left;
+  position: relative;
+  height: calc(50% - 10px);
+  transition: opacity 1s ease;
+  
+  &:not(.active) {
+    opacity: 0;
+  }
+  
+  // For easy testing border-line 
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border: 2px solid $bdc-item-border;
+    opacity: 0;
+    transition: opacity .5s ease;
+    
+    @at-root .owl-carousel:hover & {
+      opacity: 1;
+    }
+  }
+  
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + #{$offset-padding-item} * 2);
+    height: 100%;
+    opacity: .5;
+  }
+  
+  &:nth-child(odd) > div {
+    top: 0;
+    background: $bgc-item-odd;
+  }
+  
+  &:nth-child(even) > div {
+    top: calc(100% + 20px);
+    background-color: $bgc-item-even;
+  }
+}
+}

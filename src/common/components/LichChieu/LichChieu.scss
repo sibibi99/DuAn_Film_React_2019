@@ -1,0 +1,29 @@
+@import "../../../Variable.scss";
+@import "../../../Mixin.scss";
+
+.lichchieu{
+  padding: 2rem 0;
+  background-color: $black;
+  .lichchieu__menu{
+    text-align: center;
+    margin: 0 auto;
+    button{
+      margin-right: 1rem;
+    }
+  }
+  .lichchieu__content{
+    width: 60%;
+    margin: 0 auto;
+    .owl-carousel{
+      margin-top: 2rem;
+    }
+  }
+}
+
+//Responsive
+@include respon-to("extra-large") {
+  
+}
+@include respon-to("medium") {
+
+}
