@@ -3,7 +3,7 @@ import './Footer.scss'
 
 export default function Footer() {
   return (
-    <section className='Footer'>
+    <section className='footer'>
       day la footer
     </section>
   )

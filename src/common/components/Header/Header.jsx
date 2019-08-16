@@ -34,12 +34,12 @@ export default function Header() {
 
         <img src={Logo} alt=""/>
         <ul className="header__menu" id='Hide'>
-          <li><a href>Lịch Chiếu</a></li>
-          <li><a href>Cụm Rạp</a></li>
-          <li><a href>Tin Tức</a></li>
+          <li><a href='#lichchieu'>Lịch Chiếu</a></li>
+          <li><a href='#cumrap'>Cụm Rạp</a></li>
+          <li><a >Tin Tức</a></li>
         </ul>
         <div className="header__button"  id='Hide2'>
-        <a href className='header__login'><FontAwesomeIcon icon={faUserCircle} className='icon' size="2x"/> Đăng Nhập</a>
+        <a className='header__login'><FontAwesomeIcon icon={faUserCircle} className='icon' size="2x"/> Đăng Nhập</a>
         </div>
         
         <FontAwesomeIcon icon={faBars} size="2x" className='bar' onClick={() => Menu()}/>
