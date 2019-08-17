@@ -1,69 +1,58 @@
 @import "../../../Variable.scss";
 @import "../../../Mixin.scss";
 
-.cumrap{
-  background-color: $gray2;
-  color: $white;
-  .cumrap__content{
-    width: 80%;
-    margin: 0 auto;
-  }
-  .cumrap__title{
-    text-align: center;
-    color: $orange;
-    font-size: 2rem;
-    padding: 2rem 0;
-    &::before{
-      content: '';
-      height:  100px;
-      border-bottom: 1px solid red;
-    }   
-  }
-  .cumrap__icon{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    .cumrap__img{
-      cursor: pointer;
-      padding-right: 25px; 
-      opacity: 0.5;
-      img{
-        width: 80px;
-      }
-    }
-  }
-  .react-tabs__tab--selected{
-    background: none;
-    opacity: 1 !important;
-  }
-  .cumrap__detail{
-    border: 1px solid #ebebec;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-left-style: dashed;
-    padding: 10px;   
-  }
-  .cumrap__info{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+.rwt__tabs{
+  display: flex;
+}
 
-    .cumrap__list{
-    padding: 10px;
-    border: 1px solid #ebebec;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-right: none;
-      .cumrap__panel{
-        .cumrap__menu{
-          .cumrap__ul{
-            .cumrap__li{
-              display: block;
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-  }
+.rwt__tablist:not([aria-orientation="vertical"]) {
+	border-bottom: 1px solid #ddd;
+}
 
+.rwt__tablist {
+  display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 0;
+	border-right: 1px solid #ddd;
+	margin-right: 1rem;
+}
+
+.rwt__tab {
+	background: transparent;
+	border: 0;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 1rem 2rem;
+  transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.rwt__tab[aria-selected="false"]:hover,
+.rwt__tab:focus {
+  outline: 0;
+  background-color: #f4f4f4;
+	background-color: rgba(0,0,0,0.05);
+}
+
+.rwt__tab[aria-selected="true"] {
+	position: relative;
+}
+
+.rwt__tab[aria-selected="true"]:after {
+	content: '';
+	position: absolute;
+}
+
+.rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
+  bottom: -1px;
+	left: 0;
+	width: 100%;
+	border-bottom: 3px solid #00d8ff;
+}
+
+.rwt__tablist[aria-orientation="vertical"] .rwt__tab[aria-selected="true"]:after {
+  right: -1px;
+  top: 0;
+  height: 100%;
+  border-right: 3px solid #00d8ff;
 }
