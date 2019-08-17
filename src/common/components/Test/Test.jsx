@@ -1,31 +1,52 @@
 import React from 'react';
+import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import './Test.scss';
+// import './LichChieu.scss';
+import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import ItemPhim from '../ItemPhim/ItemPhim';
 
 export default function Test() {
   return (
-    <div className="test">
+    <section className='test'>
+      <Tabs
+        className='test__contain'
+        defaultTab="one"
+        onChange={(tabId) => { console.log(tabId) }}
+      >
+        <TabList className='test__menu'>
+          <Tab tabFor="one">Dang Chieu</Tab>
+          <Tab tabFor="two">Sap Chieu</Tab>
+        </TabList>
+        <TabPanel tabId="one">
+          <div className="lichchieu__content">
 
-      <div class="owl-carousel owl-theme">
-        <div> Content 1</div>
-        <div> Content 2</div>
-        <div> Content 3</div>
-        <div> Content 4</div>
-        <div> Content 5</div>
-        <div> Content 6</div>
-        <div> Content 7</div>
-        <div> Content 8</div>
-        <div> Content 9</div>
-        <div> Content 10</div>
-        <div> Content 11</div>
-        <div> Content 12</div>
-        <div> Content 13</div>
-        <div> Content 14</div>
-        <div> Content 15</div>
-      </div>
+            <OwlCarousel
+              dots={false}
+              nav={true}
+              autoplay
+              loop
+              items={4}
+              margin={10}
+            // responsiveClass = {true}
+
+            >
+              <ItemPhim />
+              <ItemPhim />
+              <ItemPhim />
+              <ItemPhim />
+
+            </OwlCarousel>
 
 
-    </div>
+          </div>
+        </TabPanel>
+        <TabPanel tabId="two">
+          <p>Tab 2 content</p>
+        </TabPanel>
+      </Tabs>
+
+    </section>
   )
 }
