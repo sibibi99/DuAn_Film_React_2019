@@ -11,6 +11,12 @@
     font-size: 5rem;
     color: gray;
     width: 100%;
+    button{
+      box-shadow: none !important;
+      padding: 0;
+      min-width: 0;
+
+    }
 
       .owl-prev{
         position: absolute !important;

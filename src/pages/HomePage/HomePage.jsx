@@ -7,6 +7,7 @@ import LichChieu from '../../common/components/LichChieu/LichChieu';
 import CumRap from '../../common/components/CumRap/CumRap';
 import CourseList   from '../../common/components/CourseList/CourseList'
 import Test from '../../common/components/Test/Test';
+import TestOwl from '../../common/components/TestOwl/TestOwl';
 
 //1 Cách thể hiện của HOC
 const ModalThemNguoiDung = Modal(FormThemNguoiDung);
@@ -19,6 +20,7 @@ export default class HomePage extends Component {
 
                 <Slider/>
                 <LichChieu/>
+                <TestOwl/>
                 <Test/>
                 <CumRap/>
                 {/* <button data-toggle="modal" data-target="#modelId">Thêm người dùng</button>

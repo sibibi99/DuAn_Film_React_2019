@@ -9,13 +9,49 @@
     margin: 0 auto;
     button{
       margin-right: 1rem;
+      &:focus{
+        background-color: $orange;
+      }
+
     }
   }
   .lichchieu__content{
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     .owl-carousel{
       margin-top: 2rem;
+      position: relative;
+      .owl-nav {
+        z-index: 9;
+        position: absolute;
+        top: 20%;
+        font-size: 6rem;
+        color: $orange;
+        width: 100%;
+        display: block;
+        button{
+          box-shadow: none !important;
+          padding: 0;
+          min-width: 0;
+          &:hover{
+            background-color: transparent;
+            border: none;
+          }
+
+
+        }
+    
+          .owl-prev{
+            position: absolute !important;
+            left: 0 !important;
+          }
+          .owl-next{
+            position: absolute !important;
+            right: 0 !important;
+          }
+    
+      }
+    
     }
   }
 }

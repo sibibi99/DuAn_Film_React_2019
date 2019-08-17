@@ -4,8 +4,35 @@
 
 .movie__item {
   cursor: pointer;
+  position: relative;
+
+  .movie__start{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background-color: red;
+    z-index: 3;
+    border-radius: 5px;
+    color: white;
+    top: 4%;
+    right: 6%;
+    opacity: 0.8;
+    span{
+      text-align: center;
+      top: 25%;
+      left: 25%;
+      position: absolute;
+      font-weight: bold;
+    }
+
+    
+  }
+ 
   &:hover {
     p{
+      display: none;
+    }
+    h3{
       display: none;
     }
     button {
@@ -13,23 +40,66 @@
       color: white;
       margin: 1rem 0;
     }
+
+    .movie__overlay{
+      position: relative;
+      .img{
+        opacity: 1;
+        top: 50%;
+        width: 70px;
+      }
+      &::before {
+        opacity: 1;
+      }
+    }
   }
-  img {
+  .movie__img {
     width: 100%;
+    height: 100%;
     border-radius: 5px;
 
   }
-  p{
-    // font-size:18px;
+  h3{
+    font-size:1rem;
     margin:15px;
     color: white;
+  }
+  p{
+    
+    margin:15px;
+    color: rgb(167, 167, 167);
   }
   button{
 
     display: none;
     width: 100%;
     background-color: $orange;
-    
-   
+  }
+  .movie__overlay{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 1s;
+    &:before{
+      content: '';
+      opacity: 0;
+      transition: all 0.5;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(to top,#000,transparent 100%);  
+    }
+
+    .img{
+      position: absolute;
+      width: 30px;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
   }
 }
