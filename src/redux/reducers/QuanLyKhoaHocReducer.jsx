@@ -17,7 +17,7 @@ const QuanLyKhoaHocReducer = (state = stateDefault, action) => {
         case types.LAY_CHI_TIET_KHOA_HOC:{
             state.thongTinKhoaHoc = action.thongTinKhoaHoc;
             return {...state}
-        }
+        } default:
     }
     return {...state}
 }

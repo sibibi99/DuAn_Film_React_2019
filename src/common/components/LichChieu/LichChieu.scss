@@ -7,6 +7,11 @@
   .lichchieu__menu{
     text-align: center;
     margin: 0 auto;
+
+    .tabActive{
+      background-color: $orange;
+      border: none;
+    }
     button{
       margin-right: 1rem;
       &:focus{
@@ -57,9 +62,21 @@
 }
 
 //Responsive
+@include respon-to("xxl") {
+  .lichchieu__content{
+    width: 60% !important;
+  }
+  
+}
+//Responsive
 @include respon-to("extra-large") {
+  .lichchieu__content{
+    width: 60% !important;
+  }
   
 }
 @include respon-to("medium") {
-
+  .lichchieu__content{
+    width: 60% !important;
+  }
 }

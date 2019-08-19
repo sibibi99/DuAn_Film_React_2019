@@ -33,7 +33,7 @@ const danhSachPhimReducer = (state=stateDefault,action) =>{
             state.danhSachGheDangDat = dsGheDangDatUpdate;
             console.log(state.danhSachGheDangDat);
             return {...state}
-        }
+        } default:
     }
     return {...state}
 }

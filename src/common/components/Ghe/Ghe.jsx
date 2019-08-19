@@ -21,7 +21,7 @@ function Ghe(props) {
             dangDat: state.dangDat
         }
         props.datGhe(gheDangDat);
-    }, [state]) //Khi  [tham số] thay đổi useEffect sẽ chạy lại
+    }, [ghe.giaVe, ghe.maGhe, ghe.stt, props, state]) //Khi  [tham số] thay đổi useEffect sẽ chạy lại
     const renderGhe = () => {
         if (ghe.daDat) {
             return (

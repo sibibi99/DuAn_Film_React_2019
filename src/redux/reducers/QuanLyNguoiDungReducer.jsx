@@ -9,6 +9,11 @@ const QuanLyNguoiDungReducer = (state=stateDefault, action)=>{
             state.isLogin = action.isLogin;
             return {...state}
         }
+        case types.DANG_KY :{
+            state.isLogin = action.isLogin;
+            return {...state}
+        } default:
+        
     }
     return {...state};
 }

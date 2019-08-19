@@ -7,7 +7,7 @@ export default function CourseItem(props) {
     console.log(props)
     return (
         <div className="card">
-            <img className="card-img-top" src={hinhAnh} alt />
+            <img className="card-img-top" src={hinhAnh} alt='' />
             <div className="card-body">
                 <h4 className="card-title">{tenKhoaHoc}</h4>
                 <NavLink to={`/coursedetails/${maKhoaHoc}`}> Xem chi tiết </NavLink>

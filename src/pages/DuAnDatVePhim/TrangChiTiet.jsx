@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { layChiTietPhim } from '../../redux/actions/QuanLyPhimActions';
@@ -13,13 +13,13 @@ function TrangChiTiet(props) {
         props.layChiTietPhim(maPhim);
         // setState({maPhim})
         console.log(props.chiTietPhim);
-    },[])
+    },[props])
     let { chiTietPhim } = props;
     return (
         <div className="container">
             <div className="row">
                 <div className="col-md-4">
-                    <img src={chiTietPhim.hinhAnh} className="mt-5" />
+                    <img src={chiTietPhim.hinhAnh} className="mt-5" alt=''/>
                 </div>
                 <div className="col-md-8">
                     <div className="mt-5">
@@ -33,7 +33,7 @@ function TrangChiTiet(props) {
                 <ul className="nav nav-tabs">
                     {chiTietPhim.heThongRapChieu ?
                         chiTietPhim.heThongRapChieu.map((htr, index) => {
-                            if(index==0){
+                            if(index===0){
 
                                
                             return (
@@ -59,7 +59,7 @@ function TrangChiTiet(props) {
                 <div className="tab-content">
                     {
                         chiTietPhim.heThongRapChieu ? chiTietPhim.heThongRapChieu.map((htr, index) => {
-                            if(index==0)
+                            if(index===0)
                             {
                             return <div key={index} className="tab-pane container active" id={htr.maHeThongRap}>
                                 {/* {htr.tenHeThongRap} */}

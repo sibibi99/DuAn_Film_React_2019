@@ -9,11 +9,11 @@ import {layThongTinKhoaHocAction} from '../../redux/actions/QuanLyKhoaHocActions
         this.props.layThongTinKhoaHoc(this.props.match.params.courseid);
     }
     render() {
-        let {courseid} = this.props.match.params; //Đối tượng nhận tham số từ route giống activated route angular 
+        // let {courseid} = this.props.match.params; //Đối tượng nhận tham số từ route giống activated route angular 
 
         return (
             <div>
-                    <img src={this.props.thongTinKhoaHoc.hinhAnh} />
+                    <img src={this.props.thongTinKhoaHoc.hinhAnh} alt=''/>
             </div>
         )
     }

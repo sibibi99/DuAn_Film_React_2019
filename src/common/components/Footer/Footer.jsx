@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "./Footer.scss";
 import BHD from "../../../Assets/img/bhd.png";
 import galaxycine from "../../../Assets/img/galaxycine.png";
@@ -21,73 +22,73 @@ export default function Footer() {
       <div className="footer__content">
         <div className="footer__item">
           <h3>The Fox</h3>
-          <a href="#">FAQ</a> <br />
-          <a href="#">Brand Guidelines</a>
+          <Link>FAQ</Link> <br />
+          <Link >BrLinknd Guidelines</Link>
         </div>
         <div className="footer__item">
           <br />
-          <a href="#">Thỏa thuận sử dụng</a>
+          <Link href="#">Thỏa thuận sử dụng</Link>
           <br />
-          <a href="#">Quy chế hoạt động</a>
+          <Link href="#">Quy chế hoạt động</Link>
           <br />
-          <a href="#">Chính sách bảo mật</a>
+          <Link href="#">Chính sách bảo mật</Link>
           <br />
-          <a href="#">Quyền lợi thành viên</a>
+          <Link href="#">Quyền lợi thành viên</Link>
           <br />
         </div>
         <div className="footer__item">
           <h3>Đối Tác</h3>
 
           <div className="row col-md-12 lineicon">
-            <a target="_blank" href="http://bhdstar.vn">
-              <img className="icon" src={BHD} />
-            </a>
-            <a target="_blank" href="http://galaxycine.vn">
-              <img className="icon" src={galaxycine} />
-            </a>
-            <a target="_blank" href="http://cinestar.com.vn">
-              <img className="icon" src={cinestar} />
-            </a>
-            <a target="_blank" href="https://www.megagscinemas.vn">
-              <img className="icon" src={megags} />
-            </a>
-            <a target="_blank" href="https://www.betacineplex.vn/">
-              <img className="icon" src={bt} />
-            </a>
+            <Link>
+              <img className="icon" src={BHD} alt=''/>
+            </Link>
+            <Link  >
+              <img className="icon" src={galaxycine} alt=''/>
+            </Link>
+            <Link target="_blank" href="http://cinestar.com.vn">
+              <img className="icon" src={cinestar} alt='' />
+            </Link>
+            <Link >
+              <img className="icon" src={megags} alt=''/>
+            </Link>
+            <Link href="https://www.betacineplex.vn/">
+              <img className="icon" src={bt} alt='' />
+            </Link>
           </div>
-          <a target="_blank" href="http://lottecinemavn.com">
-            <img className="icon" src={lotte} />
-          </a>
-          <a target="_blank" href="http://www.agribank.com.vn/">
-            <img className="icon" src={AGRIBANK} />
-          </a>
-          <a target="_blank" href="https://www.vietinbank.vn/">
-            <img className="icon" src={VIETTINBANK} />
-          </a>
-          <a target="_blank" href="https://zalopay.vn/">
-            <img className="icon" src={zalopay} />
-          </a>
-          <a target="_blank" href="https://momo.vn">
-            <img className="icon" src={momo} />
-          </a>
+          <Link>
+            <img src={lotte}  alt=''/>
+          </Link>
+          <Link href="http://www.agribank.com.vn/">
+            <img className="icon" src={AGRIBANK}  alt=''/>
+          </Link>
+          <Link >
+            <img className="icon" src={VIETTINBANK} alt=''/>
+          </Link>
+          <Link>
+            <img className="icon" src={zalopay}  alt=''/>
+          </Link>
+          <Link >
+            <img className="icon" src={momo} alt=''/>
+          </Link>
         </div>
         <div className="footer__item">
           <h3>Mobile App</h3>
-          <a target="_blank" href="#">
-            <img className="iconapp" src={apple} />
-          </a>
-          <a target="_blank" href="#">
-            <img className="iconapp" src={android} />
-          </a>
+          <Link target="_blank" href="#">
+            <img className="iconapp" src={apple} alt=''/>
+          </Link>
+          <Link target="_blank" href="#">
+            <img className="iconapp" src={android} alt=''/>
+          </Link>
         </div>
         <div className="footer__item">
           <h3 className="social">Social</h3>
-          <a target="_blank" href="#">
-            <img className="iconapp" src={facebook} />
-          </a>
-          <a target="_blank" href="#">
-            <img className="iconapp" src={zalo} />
-          </a>
+          <Link target="_blank" href="#">
+            <img className="iconapp" src={facebook} alt=''/>
+          </Link>
+          <Link target="_blank" href="#">
+            <img className="iconapp" src={zalo} alt='' />
+          </Link>
         </div>
       </div>
       <hr class="hrFooter"></hr>

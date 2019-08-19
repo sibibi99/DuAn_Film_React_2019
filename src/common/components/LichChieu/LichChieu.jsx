@@ -7,48 +7,41 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import ItemPhim from '../ItemPhim/ItemPhim';
 import ItemPhim2 from '../ItemPhim/ItemPhim2';
 
-export default class LichChieu extends Component {
-  state = {
-    responsive: {
-      0: {
-        items: 1,
-      },
-      576: {
-        items: 2,
-      },
-      768: {
-        items: 3,
-      },
-      992: {
-        items: 4,
-      },
-    },
-  }
-
-componentDidMount (){
-  
+const responsive = {
+  0: {
+    items: 1,
+  },
+  576: {
+    items: 2,
+  },
+  768: {
+    items: 3,
+  },
+  992: {
+    items: 4,
+  },
 }
+
+export default class LichChieu extends Component {
+
+
+  state = {
+    active : 'one'
+  }
 
 
 render() {
   
-  let MenuButton = document.getElementsByClassName('rwt__tab');
-  console.log(MenuButton);
-
-
-
-
-
     return (
       <section className='lichchieu'>
         <Tabs
           className='lichchieu__content'
           defaultTab="one"
-          onChange={(tabId) => { console.log(tabId) }}
+          onChange={(tabId) => this.setState({active: tabId})}
         >
           <TabList className='lichchieu__menu'>
-            <Tab tabFor="one">Dang Chieu</Tab>
-            <Tab tabFor="two">Sap Chieu</Tab>
+            <Tab className= { this.state.active === 'one' && 'tabActive'}  tabFor="one">Dang Chieu</Tab>
+            <Tab className= { this.state.active === 'two' && 'tabActive'}  tabFor="two">Sap Chieu</Tab>
           </TabList>
           <TabPanel tabId="one">
             <div className="lichchieu__item">
@@ -60,7 +53,7 @@ render() {
                 autoplay
                 autoplayTimeout={1000}
                 items={4}
-                responsive={this.state.responsive}
+                responsive={responsive}
               >
                 <ItemPhim className={'item'} />
                 <ItemPhim className={'item'} />

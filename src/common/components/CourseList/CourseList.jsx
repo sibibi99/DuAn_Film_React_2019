@@ -7,7 +7,7 @@ export default function CourseList(props) {
             <div className="row">
                 {props.DSKH.map((khoaHoc, index) => {
                     return (
-                        <div className="col-md-3" key={index}>
+                        <div className="col-md-3" key={index} alt=''>
                             <CourseItem khoaHoc={khoaHoc} />
                         </div>
                     )

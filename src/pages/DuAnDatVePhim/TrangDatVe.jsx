@@ -10,7 +10,7 @@ function TrangDatVe(props) {
         let { maLichChieu } = props.match.params;
         props.layChiTietPhongVe(maLichChieu);
         console.log(props.thongTinLichChieuPhim);
-    }, [])
+    }, [props])
     const datVe = () => {
         if (props.danhSachGheDangDat.length > 0) {
             let {maLichChieu} = props.match.params;

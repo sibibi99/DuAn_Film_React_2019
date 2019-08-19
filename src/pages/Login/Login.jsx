@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {dangNhapAction} from '../../redux/actions/QuanLyNguoiDungActions';
+import './Login.scss';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
+
  class Login extends Component {
 
     constructor(props) {
@@ -15,13 +20,16 @@ import {dangNhapAction} from '../../redux/actions/QuanLyNguoiDungActions';
             [e.target.name]:e.target.value
         })
     }
+    // Đẩy dữ liệu lên kèm History
     dangNhap = (e)=>{
         e.preventDefault();
-        this.props.dangNhap(this.state);
+        this.props.dangNhap(this.state, this.props.history);
     }
     render() {
         return (
-            <form onSubmit={this.dangNhap} className="container">
+            <div className="login">
+
+            <form onSubmit={this.dangNhap} className="login__content">
                 <h3>Đăng nhập</h3>
                 <div className="form-group">
                     <span>Tài khoản</span>
@@ -33,16 +41,18 @@ import {dangNhapAction} from '../../redux/actions/QuanLyNguoiDungActions';
                 </div>
                 <button>Đăng nhập</button>
             </form>
+            </div>
         )
     }
 }
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        dangNhap:(nguoiDung) =>{
-            dispatch(dangNhapAction(nguoiDung));
+        dangNhap: (nguoiDung, history) => {
+            dispatch(dangNhapAction(nguoiDung, history));
         }
     }
 }
 
-export default connect(null,mapDispatchToProps)(Login)
+export default compose(withRouter, connect(null,mapDispatchToProps))(Login)
+
