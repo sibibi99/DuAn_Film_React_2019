@@ -57,7 +57,7 @@ export default function Footer() {
             </Link>
           </div>
           <Link>
-            <img src={lotte}  alt=''/>
+            <img src={lotte} className="icon"  alt=''/>
           </Link>
           <Link href="http://www.agribank.com.vn/">
             <img className="icon" src={AGRIBANK}  alt=''/>

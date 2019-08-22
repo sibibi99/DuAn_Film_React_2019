@@ -4,6 +4,7 @@ import {dangNhapAction} from '../../redux/actions/QuanLyNguoiDungActions';
 import './Login.scss';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import '../../Assets/css/theme.css'
 
 
  class Login extends Component {
