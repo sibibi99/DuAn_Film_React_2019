@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import Avata from '../../../Assets/images/icon/avatar-01.jpg'
 
 export default function HeaderAdmin() {
@@ -10,7 +11,7 @@ export default function HeaderAdmin() {
         <div className="section__content section__content--p30">
           <div className="container-fluid">
             <div className="header-wrap">
-              <form className="form-header" action method="POST">
+              <form className="form-header"  method="POST">
                 <input className="au-input au-input--xl" type="text" name="search" placeholder="Search for datas & reports..." />
                 <button className="au-btn--submit" type="submit">
                   <i className="zmdi zmdi-search" />
@@ -46,7 +47,7 @@ export default function HeaderAdmin() {
                         </div>
                       </div>
                       <div className="mess__footer">
-                        <a href="#">View all messages</a>
+                        <Link to=''>View all messages</Link>
                       </div>
                     </div>
                   </div>
@@ -85,7 +86,7 @@ export default function HeaderAdmin() {
                         </div>
                       </div>
                       <div className="email__footer">
-                        <a href="#">See all emails</a>
+                        <Link to=''>See all emails</Link>
                       </div>
                     </div>
                   </div>
@@ -124,7 +125,7 @@ export default function HeaderAdmin() {
                         </div>
                       </div>
                       <div className="notifi__footer">
-                        <a href="#">All notifications</a>
+                        <Link to=''>All notifications</Link>
                       </div>
                     </div>
                   </div>
@@ -135,39 +136,25 @@ export default function HeaderAdmin() {
                       <img src={Avata} alt="John Doe" />
                     </div>
                     <div className="content">
-                      <a className="js-acc-btn" href="#">Mr Si</a>
+                      <Link to='' className="js-acc-btn" >Mr Si</Link>
                     </div>
                     <div className="account-dropdown js-dropdown">
                       <div className="info clearfix">
                         <div className="image">
-                          <a href="#">
+                          <Link to=''>
                             <img src={Avata} alt="John Doe" />
-                          </a>
+                          </Link>
                         </div>
                         <div className="content">
                           <h5 className="name">
-                            <a href="#">Mr Si</a>
+                            <Link to=''>Mr Si</Link>
                           </h5>
                           <span className="email">johndoe@example.com</span>
                         </div>
-                      </div>
-                      <div className="account-dropdown__body">
-                        <div className="account-dropdown__item">
-                          <a href="#">
-                            <i className="zmdi zmdi-account" />Account</a>
-                        </div>
-                        <div className="account-dropdown__item">
-                          <a href="#">
-                            <i className="zmdi zmdi-settings" />Setting</a>
-                        </div>
-                        <div className="account-dropdown__item">
-                          <a href="#">
-                            <i className="zmdi zmdi-money-box" />Billing</a>
-                        </div>
-                      </div>
+                      </div>      
                       <div className="account-dropdown__footer">
-                        <a href="#">
-                          <i className="zmdi zmdi-power" />Logout</a>
+                        <Link to=''>
+                          <i className="zmdi zmdi-power" />Logout</Link>
                       </div>
                     </div>
                   </div>

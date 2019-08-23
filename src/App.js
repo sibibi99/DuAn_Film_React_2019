@@ -11,6 +11,11 @@ import TrangChiTiet from './pages/DuAnDatVePhim/TrangChiTiet';
 import TrangDatVe from './pages/DuAnDatVePhim/TrangDatVe';
 import AdminTemplate from './templates/AdminTemplate';
 import DangKy from './pages/DangKy/DangKy';
+import AdminPage from './pages/AdminPage/AdminPage';
+import QuanLyPhim from './pages/QuanLyPhim/QuanLyPhim';
+import QuanLyDatVe from './pages/QuanLyDatVe/QuanLyDatVe';
+import QuanLyThanhVien from './pages/QuanLyThanhVien/QuanLyThanhVien';
+import QuanLyTinTuc from './pages/QuanLyTinTuc/QuanLyTinTuc';
 
 
 
@@ -20,13 +25,16 @@ function App() {
     <BrowserRouter>
       <Fragment>
         <Switch>
-          <AdminTemplate path='/admin' Component={Login}></AdminTemplate>
+          <AdminTemplate path='/admin/quanlyphim' Component={QuanLyPhim}></AdminTemplate>
+          <AdminTemplate path='/admin/quanlythanhvien' Component={QuanLyThanhVien}></AdminTemplate>
+          <AdminTemplate path='/admin/quanlydatve' Component={QuanLyDatVe}></AdminTemplate>
+          <AdminTemplate path='/admin/quanlytintuc' Component={QuanLyTinTuc}></AdminTemplate>
+          <AdminTemplate path='/admin' Component={AdminPage}></AdminTemplate>
           <HomeTemplate  path='/home'  Component={HomePage}></HomeTemplate>
           <HomeTemplate  path='/courselist'  Component={CourseList}></HomeTemplate>
           <HomeTemplate  path='/coursedetails/:courseid'  Component={CourseDetails}></HomeTemplate>
           <HomeTemplate  path='/login'  Component={Login}></HomeTemplate>
           <HomeTemplate  path='/dangky'  Component={DangKy}></HomeTemplate>
-          {/* <HomeTemplate  path='/admin'  Component={Login}></HomeTemplate> */}
           <HomeTemplate  path='/'  Component={HomePage}></HomeTemplate>
           <HomeTemplate path='/trang-chu' Component={TrangChu} ></HomeTemplate>
           <HomeTemplate path='/chi-tiet-phim/:maPhim' Component={TrangChiTiet} ></HomeTemplate>

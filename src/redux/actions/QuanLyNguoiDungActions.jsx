@@ -59,5 +59,24 @@ export const dangKyAction = (nguoiDung, history) =>{
         })
     }
 }
+export const layDanhSachNguoiDungAction = () =>{
+    return dispatch => {
+        axios({
+            url:config.domain + 'QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP05',
+            method:'GET',
+
+        }).then(result =>{
+            // Lấy về danh sách người dùng
+            // console.log(result.data);
+            dispatch({
+                type:types.LAY_DANH_SACH_NGUOI_DUNG,
+                DSND:result.data
+            })
+            
+        }).catch(error=>{
+            // console.log(error.response.data);
+        })
+    }
+}
 
 

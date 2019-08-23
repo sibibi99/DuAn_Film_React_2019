@@ -16,17 +16,17 @@ import '../Assets/vendor/slick/slick.css'
 import '../Assets/vendor/select2/select2.min.css'
 import '../Assets/vendor/perfect-scrollbar/perfect-scrollbar.css'
 import '../Assets/css/theme.css';
-import AdminPage from '../pages/AdminPage/AdminPage';
 
 
-const AdminLayout = ({  ...rest }) => {
+const AdminLayout = ({children,  ...rest }) => {
     
     
     return (
         <Fragment>
             <HeaderAdmin/>
             <SideBarAdmin/>
-            <AdminPage/>
+            {children}
+         
             
           
         </Fragment>

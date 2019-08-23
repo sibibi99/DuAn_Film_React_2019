@@ -1,29 +1,21 @@
-// .menu-sidebar {
-//   width: 300px;
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   bottom: 0;
-//   background: #fff;
-//   overflow-y: auto;
-//   .navbar-sidebar {
-//     padding: 35px;
-//     padding-bottom: 0;
-//     .list-unstyled {
-//       padding-left: 0;
-//       list-style: none;
-//       ul {
-//         margin: 0;
-//     }
-//     .has-sub {
-//       position: relative;
-//   }
-//   }
-// .navbar__list li a {
-//     display: block;
-//     color: #555;
-//     font-size: 16px;
-//     padding: 15px 0;
-// }
-// }
-// }
+.menu-sidebar {
+ background-color: #252525;
+ color: white;
+ .logo{
+  background-color: #252525;
+ }
+ .navbar__list{
+  .active{
+    color: orange;
+  }
+
+   li a{
+     color: white;
+     text-transform: uppercase;
+      &:hover{
+        color: orange;
+      }
+      
+   }
+ }
+}

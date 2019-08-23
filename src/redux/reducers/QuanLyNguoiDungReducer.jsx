@@ -1,7 +1,8 @@
 import * as types from '../constants/QuanLyNguoiDung';
 
 const stateDefault = {
-    isLogin: localStorage.getItem('isLogin') ? localStorage.getItem('isLogin') : false
+    isLogin: localStorage.getItem('isLogin') ? localStorage.getItem('isLogin') : false,
+    DSND: []
 }
 const QuanLyNguoiDungReducer = (state=stateDefault, action)=>{
     switch(action.type) {
@@ -12,7 +13,12 @@ const QuanLyNguoiDungReducer = (state=stateDefault, action)=>{
         case types.DANG_KY :{
             state.isLogin = action.isLogin;
             return {...state}
-        } default:
+        }
+        case types.LAY_DANH_SACH_NGUOI_DUNG :{
+            state.DSND = action.DSND;
+            return {...state}
+        }
+         default:
         
     }
     return {...state};

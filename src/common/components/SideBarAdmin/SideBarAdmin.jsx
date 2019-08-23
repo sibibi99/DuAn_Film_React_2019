@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, Link } from "react-router-dom";
 import './SideBarAdmin.scss';
 import Logo from '../../../Assets/img/fox.png';
 
@@ -6,32 +7,32 @@ export default function SideBarAdmin() {
   return (
 <aside className="menu-sidebar d-none d-lg-block">
   <div className="logo">
-    <a href="#">
-      <img src={Logo } alt="Cool Admin" />
-    </a>
+    <Link to='admin'>
+      <img src={Logo } alt="Fox Admin" />
+    </Link>
   </div>
   <div className="menu-sidebar__content js-scrollbar1 ps">
     <nav className="navbar-sidebar">
       <ul className="list-unstyled navbar__list">
-        <li className="active has-sub">
-          <a className="js-arrow" href="#">
-            <i className="fas fa-tachometer-alt" />Dashboard</a>
+        <li >
+          <NavLink exact to='/admin'  >
+            <i className="fas fa-tachometer-alt" />Dashboard</NavLink>
         </li>
         <li>
-          <a href="#">
-            <i className="fas fa-chart-bar" />Quản Lý Phim</a>
+          <NavLink to='/admin/quanlyphim' >
+            <i className="fas fa-chart-bar" />Quản Lý Phim</NavLink>
         </li>
         <li>
-          <a href="#">
-            <i className="fas fa-table" />Quản Lý Thành Viên</a>
+          <NavLink to='/admin/quanlythanhvien'>
+            <i className="fas fa-table" />Quản Lý Thành Viên</NavLink>
         </li>
         <li>
-          <a href="#">
-            <i className="fas fa-table" />Quản Lý Đặt Vé</a>
+          <NavLink to='/admin/quanlydatve'>
+            <i className="fas fa-table" />Quản Lý Đặt Vé</NavLink>
         </li>
         <li>
-          <a href="#">
-            <i className="fas fa-table" />Quản Lý Tin Tức</a>
+          <NavLink to='/admin/quanlytintuc'>
+            <i className="fas fa-table" />Quản Lý Tin Tức</NavLink>
         </li>
 
       </ul>

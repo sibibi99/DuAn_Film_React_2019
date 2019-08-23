@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import Modal from '../../common/components/Modal/Modal';
-import FormThemNguoiDung from '../../common/components/QuanLyNguoiDung/FormThemNguoiDung';
-import Modal2 from '../../common/components/Modal/Modal2';
 import Slider from '../../common/components/Slider/Slider';
 import LichChieu from '../../common/components/LichChieu/LichChieu';
 import CumRap from '../../common/components/CumRap/CumRap';
 
 
-//1 Cách thể hiện của HOC
-const ModalThemNguoiDung = Modal(FormThemNguoiDung);
 
 export default class HomePage extends Component {
 
@@ -18,11 +13,7 @@ export default class HomePage extends Component {
 
                 <Slider/>
                 <LichChieu/>
-
                 <CumRap/>
-                {/* <button data-toggle="modal" data-target="#modelId">Thêm người dùng</button>
-                <ModalThemNguoiDung />
-                <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" /> <Modal2 Component={} prop... />  */}
             </div>
         )
     }
