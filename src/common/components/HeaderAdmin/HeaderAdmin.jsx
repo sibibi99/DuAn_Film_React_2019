@@ -135,7 +135,7 @@ export default function HeaderAdmin() {
                       <img src={Avata} alt="John Doe" />
                     </div>
                     <div className="content">
-                      <a className="js-acc-btn" href="#">john doe</a>
+                      <a className="js-acc-btn" href="#">Mr Si</a>
                     </div>
                     <div className="account-dropdown js-dropdown">
                       <div className="info clearfix">
@@ -146,7 +146,7 @@ export default function HeaderAdmin() {
                         </div>
                         <div className="content">
                           <h5 className="name">
-                            <a href="#">john doe</a>
+                            <a href="#">Mr Si</a>
                           </h5>
                           <span className="email">johndoe@example.com</span>
                         </div>
