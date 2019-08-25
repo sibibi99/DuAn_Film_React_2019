@@ -1,23 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import Avata from '../../../Assets/images/icon/avatar-01.jpg'
+import {Link} from 'react-router-dom';
+import Avata from '../../../Assets/images/icon/avatar-06.jpg';
+import FormThemNguoiDung from '../QuanLyNguoiDung/FormThemNguoiDung';
+import Modal2 from '../Modal/Modal2';
+// import Modal from '../Modal/Modal';
+
+// HIGHT ODER COMPONENT
+// const ModalThemNguoiDung = Modal2(FormThemNguoiDung);
 
 export default function HeaderAdmin() {
   return (
     <div>
-      
+       {/* Modal them nguoi dung*/}
+       <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" />
+
 
       <header className="header-desktop">
         <div className="section__content section__content--p30">
           <div className="container-fluid">
             <div className="header-wrap">
-              <form className="form-header"  method="POST">
+              {/* <form className="form-header"  method="POST">
                 <input className="au-input au-input--xl" type="text" name="search" placeholder="Search for datas & reports..." />
                 <button className="au-btn--submit" type="submit">
                   <i className="zmdi zmdi-search" />
                 </button>
-              </form>
-              <div className="header-button">
+              </form> */}
+              <div className="header-button ml-auto">
                 <div className="noti-wrap">
                   <div className="noti__item js-item-menu">
                     <i className="zmdi zmdi-comment-more" />

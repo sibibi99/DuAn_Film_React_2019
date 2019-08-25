@@ -16,40 +16,40 @@ import '../Assets/vendor/slick/slick.css'
 import '../Assets/vendor/select2/select2.min.css'
 import '../Assets/vendor/perfect-scrollbar/perfect-scrollbar.css'
 import '../Assets/css/theme.css';
+import Modal from '../common/components/Modal/Modal';
 
 
-const AdminLayout = ({children,  ...rest }) => {
-    
-    
+const AdminLayout = ({ children, ...rest }) => {
+
+
     return (
         <Fragment>
-            <HeaderAdmin/>
-            <SideBarAdmin/>
+            <HeaderAdmin />
+            <SideBarAdmin />
             {children}
-         
-            
-          
+            <Modal/>
+    
+
         </Fragment>
     )
 }
 const AdminTemplate = ({ Component, ...rest }) => {
     return <Route {...rest} render={(props) => {
-        if(localStorage.getItem('userLogin'))
-        {
+        if (localStorage.getItem('userLogin')) {
 
             let userLogin = JSON.parse(localStorage.getItem('userLogin'))
-            if(userLogin.maLoaiNguoiDung ==='QuanTri'){
+            if (userLogin.maLoaiNguoiDung === 'QuanTri') {
                 return (
                     <AdminLayout>
                         <Component {...props} />
-                       
-                        
+
+
                     </AdminLayout>
                 )
             }
             return <Redirect to='/' />
         }
- 
+
         return <Redirect to='/login' />
     }} />
 }
