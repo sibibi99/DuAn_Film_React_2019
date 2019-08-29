@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from '../constants/QuanLyNguoiDung';
 import * as config from '../../common/Config/Config';
-
+import Swal from 'sweetalert2';
 
 
 export const dangNhapAction = (nguoiDung, history) =>{
@@ -59,6 +59,102 @@ export const dangKyAction = (nguoiDung, history) =>{
         })
     }
 }
+export const themNguoiDungAction = (nguoiDung, history) =>{
+    console.log(nguoiDung);
+    return dispatch => {
+        let token = localStorage.getItem('accessToken');
+    console.log(token);
+        
+        axios({
+            url:config.domain + 'QuanLyNguoiDung/ThemNguoiDung',
+            method:'POST',
+            data:nguoiDung,
+            headers: {
+            "Authorization": "Bearer "  + token     
+            }
+        }).then(result =>{
+            // Đóng Modal Lại
+            // Văng SweetAler lên
+            Swal.fire({
+                type: 'success',
+                title: 'Đăng Ký Thành Công',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // Refresh lai state           
+        }).catch(error=>{
+            dispatch({
+                type:types.DANG_KY,
+                isLogin:false
+            })
+            // Đưa lỗi ra form
+            console.log(error.response.data);
+        })
+    }
+}
+export const xoaNguoiDungAction = (nguoiDung) =>{
+    console.log(nguoiDung);
+    return dispatch => {
+        let token = localStorage.getItem('accessToken');
+        
+        axios({
+            url:config.domain + 'QuanLyNguoiDung/XoaNguoiDung',
+            method:'DELETE',
+            data:nguoiDung,
+            headers: {
+            "Authorization": "Bearer "  + token     
+            }
+        }).then(result =>{
+            console.log(result);
+            
+            // Văng SweetAler lên
+            Swal.fire({
+                type: 'success',
+                title: 'XOA Thành Công',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // Refresh lai state      
+         
+        }).catch(error=>{
+            dispatch({
+                // type:types.DANG_KY,
+                // isLogin:false
+            })
+            // Đưa lỗi ra form
+            console.log(error.response.data);
+        })
+    }
+}
+export const suaNguoiDungAction = (nguoiDung) =>{
+    console.log(nguoiDung);
+    return dispatch => {
+        let token = localStorage.getItem('accessToken');
+        
+        axios({
+            url:config.domain + 'QuanLyNguoiDung/XoaNguoiDung',
+            method:'DELETE',
+            data:nguoiDung,
+            headers: {
+            "Authorization": "Bearer "  + token     
+            }
+        }).then(result =>{
+            // Đóng Modal Lại
+
+            
+         
+        }).catch(error=>{
+            dispatch({
+                // type:types.DANG_KY,
+                // isLogin:false
+            })
+
+            // Đưa lỗi ra form
+            console.log(error.response.data);
+        })
+    }
+}
+
 export const layDanhSachNguoiDungAction = () =>{
     return dispatch => {
         axios({

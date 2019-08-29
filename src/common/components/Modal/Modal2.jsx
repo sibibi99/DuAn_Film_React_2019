@@ -10,7 +10,7 @@ export default function Modal2({ Component, ...restParam }) { //{Component,...re
           <div className="modal-content">
             <div className="modal-header">
               <h3 className="modal-title"><strong>{restParam.title}</strong></h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id='modalClose' class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">×</span>
 							</button>
             </div>

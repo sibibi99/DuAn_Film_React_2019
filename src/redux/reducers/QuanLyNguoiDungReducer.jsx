@@ -18,6 +18,14 @@ const QuanLyNguoiDungReducer = (state=stateDefault, action)=>{
             state.DSND = action.DSND;
             return {...state}
         }
+        case types.XOA_NGUOI_DUNG :{
+            state.DSND = action.DSND;
+            return {...state}
+        }
+        // case types.SUA_NGUOI_DUNG :{
+        //     state.DSND = action.DSND;
+        //     return {...state}
+        // }
          default:
         
     }

@@ -16,7 +16,6 @@ import '../Assets/vendor/slick/slick.css'
 import '../Assets/vendor/select2/select2.min.css'
 import '../Assets/vendor/perfect-scrollbar/perfect-scrollbar.css'
 import '../Assets/css/theme.css';
-import Modal from '../common/components/Modal/Modal';
 
 
 const AdminLayout = ({ children, ...rest }) => {
@@ -27,7 +26,7 @@ const AdminLayout = ({ children, ...rest }) => {
             <HeaderAdmin />
             <SideBarAdmin />
             {children}
-            <Modal/>
+            
     
 
         </Fragment>

@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Avata from '../../../Assets/images/icon/avatar-06.jpg';
-import FormThemNguoiDung from '../QuanLyNguoiDung/FormThemNguoiDung';
-import Modal2 from '../Modal/Modal2';
-// import Modal from '../Modal/Modal';
+
 
 // HIGHT ODER COMPONENT
 // const ModalThemNguoiDung = Modal2(FormThemNguoiDung);
@@ -11,9 +9,6 @@ import Modal2 from '../Modal/Modal2';
 export default function HeaderAdmin() {
   return (
     <div>
-       {/* Modal them nguoi dung*/}
-       <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" />
-
 
       <header className="header-desktop">
         <div className="section__content section__content--p30">

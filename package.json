@@ -22,7 +22,8 @@
     "react-scroll": "^1.7.12",
     "react-web-tabs": "^1.0.1",
     "redux": "^4.0.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sweetalert2-react": "^0.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
