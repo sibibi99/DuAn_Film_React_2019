@@ -1,8 +1,6 @@
 import {combineReducers} from 'redux';
-import QuanLyKhoaHocReducer from './reducers/QuanLyKhoaHocReducer';
-import QuanLyNguoiDungReducer from './reducers/QuanLyNguoiDungReducer';
-import danhSachPhimReducer from './reducers/QuanLyPhimReducer';
+import QuanLyNguoiDungReducer from './PageQuanLyThanhVien/reducer';
 const rootReducer = combineReducers({
-    QuanLyKhoaHocReducer,QuanLyNguoiDungReducer,danhSachPhimReducer
+QuanLyNguoiDungReducer
 });
 export default rootReducer;

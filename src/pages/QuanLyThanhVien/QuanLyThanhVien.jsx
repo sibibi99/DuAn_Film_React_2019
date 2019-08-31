@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { layDanhSachNguoiDungAction } from '../../redux/actions/QuanLyNguoiDungActions';
+import { layDanhSachNguoiDungAction } from '../../redux/PageQuanLyThanhVien/action'
 import './QuanLyThanhVien.scss';
 import DanhSachThanhVien from './DanhSachThanhVien/DanhSachThanhVien';
 import Modal2 from '../../common/components/Modal/Modal2';
