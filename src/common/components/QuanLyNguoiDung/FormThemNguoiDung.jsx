@@ -8,7 +8,9 @@ const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\
 // Sau ky tu va khong co khaong trong
 const userRegex = RegExp(/^\S{6,}$/);
 //Phone number
-const phoneNumber = RegExp(/(09|01[2|6|8|9])+([0-9]{8})\b/);
+const phoneNumber = RegExp(/(03|05|07|08|09)+([0-9]{8})\b/);
+
+
 
 
 const formValid = formErrors => {
@@ -43,7 +45,7 @@ class FormThemNguoiDung extends Component {
 
   //Modal Open/Close
   toggleModal = () => {
-    console.log(this.state.isOpen);
+    // console.log(this.state.isOpen);
     this.setState({
       isOpen: !this.state.isOpen
       
@@ -81,7 +83,8 @@ class FormThemNguoiDung extends Component {
       // [e.target.name]: e.target.value
       formErrors, [name]: value
 
-    }, () => console.log(this.state)
+    }, 
+    // () => console.log(this.state)
     )
   }
   // Đẩy dữ liệu lên kèm History
@@ -181,7 +184,7 @@ class FormThemNguoiDung extends Component {
               <div className=" col-md-9">
                 <select onChange={this.handleInput} id="select" name="maLoaiNguoiDung" class="form-control">
                   <option value="0">Vui lòng chọn</option>
-                  <option value="KhanhHang">Khách Hàng</option>
+                  <option value="KhachHang">Khách Hàng</option>
                   <option value="QuanTri">Quản Trị</option>
                 </select>
               </div>

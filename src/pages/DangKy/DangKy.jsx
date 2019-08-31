@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { dangKyAction } from '../../redux/PageQuanLyThanhVien/action';
+import { dangKyAction } from '../../redux/DangKyDangNhap/action';
 import './DangKy.scss'
 class DangKy extends Component {
 

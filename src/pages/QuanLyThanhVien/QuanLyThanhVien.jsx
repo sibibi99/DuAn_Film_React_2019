@@ -12,7 +12,7 @@ import FormSuaNguoiDung from '../../common/components/QuanLyNguoiDung/FormSuaNgu
 
 function QuanLyThanhVien(props) {
 
-  const [hienModal, setHienModal] = useState(true);
+  const [hienModal, setHienModal] = useState(false);
   const themNguoiDung = () => {   
       return <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" />
     }
@@ -83,8 +83,8 @@ function QuanLyThanhVien(props) {
         </div>
       </div>
        {/* Modal them nguoi dung*/}
-       {/* {themNguoiDung()} */}
-       {suaNguoiDung()}
+       {themNguoiDung()}
+       {/* {suaNguoiDung()} */}
     </div>
 
   )
