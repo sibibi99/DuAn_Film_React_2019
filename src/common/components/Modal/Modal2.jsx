@@ -3,6 +3,7 @@ import React from 'react'
 export default function Modal2({ Component, ...restParam }) { //{Component,...restParam} :props
 
   //Định nghĩa nhiều thuộc tính phương thức 
+  
   return (
     <div>
       <div className="modal fade" id="modelId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

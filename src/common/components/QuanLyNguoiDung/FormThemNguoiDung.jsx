@@ -198,7 +198,7 @@ class FormThemNguoiDung extends Component {
               <button type="submit" className="btn btn-success btn-sm" onClick={() => this.toggleModal()}>
                 <i className="fa fa-user" /> Thêm Người Dùng
               </button>
-              <button type="reset" className="btn btn-danger btn-sm">
+              <button type="reset" id='nhapLai' className="btn btn-danger btn-sm">
                 <i className="fa fa-ban" /> Nhập Lại
               </button>
             </div>
