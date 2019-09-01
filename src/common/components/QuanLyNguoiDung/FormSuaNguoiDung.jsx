@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { themNguoiDungAction } from '../../../redux/PageQuanLyThanhVien/action';
+import { themNguoiDungAction } from '../../../pages/QuanLyThanhVien/actions';
 // Emai Reular
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 // Sau ky tu va khong co khaong trong

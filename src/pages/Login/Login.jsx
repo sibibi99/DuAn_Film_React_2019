@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {dangNhapAction} from '../../redux/DangKyDangNhap/action';
+import {dangNhapAction} from './action';
 import './Login.scss';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';

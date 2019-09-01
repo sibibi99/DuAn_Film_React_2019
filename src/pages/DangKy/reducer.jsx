@@ -6,10 +6,6 @@ const stateDefault = {
 }
 const QuanLyDangNhapReducer = (state=stateDefault, action)=>{
     switch(action.type) {
-        case types.DANG_NHAP :{
-            state.isLogin = action.isLogin;
-            return {...state}
-        }
         case types.DANG_KY :{
             state.isLogin = action.isLogin;
             return {...state}
