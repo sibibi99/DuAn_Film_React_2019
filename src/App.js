@@ -16,6 +16,7 @@ import QuanLyPhim from './pages/QuanLyPhim/QuanLyPhim';
 import QuanLyDatVe from './pages/QuanLyDatVe/QuanLyDatVe';
 import QuanLyThanhVien from './pages/QuanLyThanhVien/QuanLyThanhVien';
 import QuanLyTinTuc from './pages/QuanLyTinTuc/QuanLyTinTuc';
+import SignupForm from './common/components/FormikForm/SignupForm';
 
 
 

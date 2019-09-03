@@ -4,7 +4,8 @@ const stateDefault = {
   isLogin: localStorage.getItem("isLogin")
     ? localStorage.getItem("isLogin")
     : false,
-  DSND: []
+  DSND: [],
+  Error: ''
 };
 const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
   switch (action.type) {
@@ -12,14 +13,12 @@ const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
       state.DSND = action.DSND;
       return { ...state };
     }
-    case types.XOA_NGUOI_DUNG: {
-      state.DSND = action.DSND;
+    // eslint-disable-next-line no-duplicate-case
+    case types.XU_LY_ERROR: {
+      state.Error = action.Error;
       return { ...state };
     }
-    // case types.SUA_NGUOI_DUNG :{
-    //     state.DSND = action.DSND;
-    //     return {...state}
-    // }
+
     default:
   }
   return { ...state };

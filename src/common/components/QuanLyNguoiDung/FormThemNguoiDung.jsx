@@ -93,13 +93,13 @@ class FormThemNguoiDung extends Component {
     e.preventDefault();
 
     if (formValid(this.state.formErrors)){
-      console.log(`
-      --SUBBMITTING--
-      Tai khoan: ${this.state.taiKhoan}
-      Mat Khau: ${this.state.matKhau}
-      Email: ${this.state.email}
-      So Dien Thoai: ${this.state.soDt}
-      `);
+      // console.log(`
+      // --SUBBMITTING--
+      // Tai khoan: ${this.state.taiKhoan}
+      // Mat Khau: ${this.state.matKhau}
+      // Email: ${this.state.email}
+      // So Dien Thoai: ${this.state.soDt}
+      // `);
     } else {
       // console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
       
@@ -191,7 +191,7 @@ class FormThemNguoiDung extends Component {
             </div>
             {/* End */}
             <div className="col-md-12">
-              <h3 className='text-danger text-center'>Loi o day</h3>
+              <h4 className='text-danger text-center'>{this.props.Error}</h4>
 
             </div>
             <div className="modal-footer just justify-content-center mt-2 col-md-12 ">
@@ -213,6 +213,14 @@ class FormThemNguoiDung extends Component {
   }
 }
 
+// Đưa dữ liệu trên Reducer xuống
+const mapStateToProp = state => {
+  // console.log(state);
+  return {
+    Error: state.QuanLyNguoiDungReducer.Error
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     themNguoiDung: (nguoiDung, history) => {
@@ -221,4 +229,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default compose(withRouter, connect(null, mapDispatchToProps))(FormThemNguoiDung)
+export default compose(withRouter, connect(mapStateToProp, mapDispatchToProps))(FormThemNguoiDung)

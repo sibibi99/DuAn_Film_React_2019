@@ -4,20 +4,22 @@ import { layDanhSachNguoiDungAction } from "./actions";
 import "./QuanLyThanhVien.scss";
 import DanhSachThanhVien from "./DanhSachThanhVien/DanhSachThanhVien";
 import Modal2 from "../../common/components/Modal/Modal2";
-import FormThemNguoiDung from "../../common/components/QuanLyNguoiDung/FormThemNguoiDung";
 import FormSuaNguoiDung from "../../common/components/QuanLyNguoiDung/FormSuaNguoiDung";
+import FormThemNguoiDung from "../../common/components/QuanLyNguoiDung/FormThemNguoiDung";
 
 function QuanLyThanhVien(props) {
-  const [hienModal, setHienModal] = useState(false);
+
+  const [titleModal, setModal] = useState('');
   const themNguoiDung = () => {
-    return <Modal2 Component={FormThemNguoiDung} title="Thêm người dùng" />;
+    return <Modal2 Component={FormSuaNguoiDung} title={titleModal} />;
   };
   const xoaNguoiDung = taikhoan => {
     console.log("Xoa: " + taikhoan);
   };
   const suaNguoiDung = nguoidung => {
-    // console.log("Sua: " + nguoidung.taikhoan);
-    return <Modal2 Component={FormSuaNguoiDung} title="Sua Nguoi Dung" />;
+    console.log("Sua: " + nguoidung.taiKhoan);
+    setModal('Cập Nhật Người Dùng')
+    return <Modal2 Component={FormThemNguoiDung} title={titleModal} />;
   };
 
   // Lấy Danh Sách Người dùng;
@@ -61,10 +63,7 @@ function QuanLyThanhVien(props) {
                     className="au-btn au-btn-icon au-btn--green au-btn--small"
                     data-toggle="modal"
                     data-target="#modelId"
-                    onClick={() => {
-                      setHienModal(!hienModal);
-                    }}
-                  >
+                    onClick={() => setModal('Thêm Người Dùng')}>
                     <i className="zmdi zmdi-plus"></i>Thêm Người Dùng
                   </button>
                 </div>
@@ -93,6 +92,7 @@ function QuanLyThanhVien(props) {
 
 // Đưa dữ liệu trên Reducer xuống
 const mapStateToProp = state => {
+  // console.log(state);
   return {
     DSND: state.QuanLyNguoiDungReducer.DSND
   };

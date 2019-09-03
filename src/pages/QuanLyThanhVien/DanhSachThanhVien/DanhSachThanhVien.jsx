@@ -6,7 +6,7 @@ export default function DanhSachThanhVien(props) {
   // Output Con truyen du lieu len cha
   const suaND = (nd) => {
     props.suaND(nd);
-    console.log(nd);
+    // console.log(nd.taiKhoan);
 
   }
   const xoaND = (nd) => {
@@ -45,8 +45,8 @@ export default function DanhSachThanhVien(props) {
 
                     <button
                       // Con day du lieu len cha
-                      onClick={() => { suaND(nguoidung) }}
-                      data-toggle="modal" data-target="#modelId" className="item" data-placement="top" title="Sua người dùng" >
+                      onClick={() => { suaND(nguoidung)}}
+                      data-toggle="modal" data-target="#modelId" className="item" data-placement="top" >
                       <i className="zmdi zmdi-edit" />
                     </button>
                     <button

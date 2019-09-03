@@ -193,7 +193,7 @@ class FormSuaNguoiDung extends Component {
             </div>
             <div className="modal-footer just justify-content-center mt-2 col-md-12 ">
               <button type="submit" className="btn btn-success btn-sm" onClick={() => this.toggleModal()}>
-                <i className="fa fa-user" /> Thêm Người Dùng
+                <i className="fa fa-user" /> Cập Nhật
               </button>
               <button type="reset" className="btn btn-danger btn-sm">
                 <i className="fa fa-ban" /> Nhập Lại
