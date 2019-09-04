@@ -35,7 +35,7 @@ function App() {
           <HomeTemplate  path='/courselist'  Component={CourseList}></HomeTemplate>
           <HomeTemplate  path='/coursedetails/:courseid'  Component={CourseDetails}></HomeTemplate>
           <HomeTemplate  path='/login'  Component={Login}></HomeTemplate>
-          <HomeTemplate  path='/dangky'  Component={DangKy}></HomeTemplate>
+          <HomeTemplate  path='/dangky'  Component={SignupForm}></HomeTemplate>
           <HomeTemplate  path='/'  Component={HomePage}></HomeTemplate>
           <HomeTemplate path='/trang-chu' Component={TrangChu} ></HomeTemplate>
           <HomeTemplate path='/chi-tiet-phim/:maPhim' Component={TrangChiTiet} ></HomeTemplate>
