@@ -1,4 +1,5 @@
 import * as types from "./constants";
+import axios from "axios";
 import * as config from "../../common/Config/Config";
 import { getAPI } from "../../common/utils/axios";
 
@@ -15,7 +16,16 @@ export const layDanhSachPhimAction = () => {
       });
     } catch (error) {
       // Call api fail sẽ nhảy vào đây
-      console.log(error.response);
+      // console.log(error.response);
     }
+  };
+};
+
+export const themPhimAction = (phim) => {
+  console.log(phim);
+  return dispatch => {
+    let token = localStorage.getItem("accessToken");
+    // console.log(token);
+
   };
 };

@@ -7,9 +7,50 @@ import FormThemPhim from '../../common/components/QuanLyPhim/FormThemPhim';
 
 
 class QuanLyphim extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      trangThaiThem: true
+    }
+  }
+  // Hàm Đổi Trạng Thái
+  doiTrangThai = () => {
+    this.setState({
+      trangThaiThem : !this.state.trangThaiThem
+    })
+  }
+  // Hàm Hiển THị Nút
+  hienThiNut = () => {
+    if(this.state.trangThaiThem === true) {
+      return (
+        <button
+        className="au-btn au-btn-icon au-btn--green au-btn--small"
+        data-toggle="modal"
+        onClick = {() => {this.doiTrangThai()}}
+        data-target="#modelId">
+        <i className="zmdi zmdi-plus"></i>Thêm Phim
+      </button>
+      )} else {
+        return (
+          <button
+          className="au-btn au-btn-icon btn-warning au-btn--small"
+          data-toggle="modal"
+          onClick = {() => {this.doiTrangThai()}}
+          data-target="#modelId">
+          <i className="zmdi zmdi-plus"></i>Đóng Lại
+         </button>
+        )
+      }
+  }
+  // Hàm Hiển THị Form
+  hienThiForm = () => {
+    if(this.state.trangThaiThem === false) {
+      return <FormThemPhim/>
+    }
+  }
+  // Gọi Hàm Lấy dữ liệu
   componentDidMount() {
     this.props.layDanhSachPhim();
-    
   }
   render() {
     return (
@@ -25,7 +66,8 @@ class QuanLyphim extends Component {
               <div className="col-md-12">
                 {/* DATA TABLE */}
                 <h1 className="title-1 m-b-35">Danh Sách Phim</h1>
-                <FormThemPhim/>
+                {/* // Goi Ham Hien Thi Form */}
+                {this.hienThiForm()}
 
                 <div className="table-data__tool">
                   <div className="table-data__tool-left col-md-6">
@@ -43,14 +85,8 @@ class QuanLyphim extends Component {
                     </div>
                   </div>
                   <div className="table-data__tool-right ">
-                    <button
-                      className="au-btn au-btn-icon au-btn--green au-btn--small"
-                      data-toggle="modal"
-                      data-target="#modelId"
-
-                    >
-                      <i className="zmdi zmdi-plus"></i>Thêm Phim
-                  </button>
+                    {/* Hien Thi Nut */}
+                    {this.hienThiNut()}
                   </div>
                 </div>
                 <DanhSachPhim DSP={this.props.DSP} />
