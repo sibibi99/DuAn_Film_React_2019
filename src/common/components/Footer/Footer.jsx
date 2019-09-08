@@ -22,76 +22,76 @@ export default function Footer() {
       <div className="footer__content">
         <div className="footer__item">
           <h3>The Fox</h3>
-          <Link>FAQ</Link> <br />
-          <Link >BrLinknd Guidelines</Link>
+          <Link to=''>FAQ</Link> <br />
+          <Link to=''>BrLinknd Guidelines</Link>
         </div>
         <div className="footer__item">
           <br />
-          <Link href="#">Thỏa thuận sử dụng</Link>
+          <Link to=''>Thỏa thuận sử dụng</Link>
           <br />
-          <Link href="#">Quy chế hoạt động</Link>
+          <Link to=''>Quy chế hoạt động</Link>
           <br />
-          <Link href="#">Chính sách bảo mật</Link>
+          <Link to=''>Chính sách bảo mật</Link>
           <br />
-          <Link href="#">Quyền lợi thành viên</Link>
+          <Link to=''>Quyền lợi thành viên</Link>
           <br />
         </div>
         <div className="footer__item">
           <h3>Đối Tác</h3>
 
           <div className="row col-md-12 lineicon">
-            <Link>
+            <Link to=''>
               <img className="icon" src={BHD} alt=''/>
             </Link>
-            <Link  >
+            <Link  to=''>
               <img className="icon" src={galaxycine} alt=''/>
             </Link>
-            <Link target="_blank" href="http://cinestar.com.vn">
+            <Link to='' target="_blank" href="http://cinestar.com.vn">
               <img className="icon" src={cinestar} alt='' />
             </Link>
-            <Link >
+            <Link to=''>
               <img className="icon" src={megags} alt=''/>
             </Link>
-            <Link href="https://www.betacineplex.vn/">
+            <Link to=''>
               <img className="icon" src={bt} alt='' />
             </Link>
           </div>
-          <Link>
+          <Link to=''>
             <img src={lotte} className="icon"  alt=''/>
           </Link>
-          <Link href="http://www.agribank.com.vn/">
+          <Link to=''>
             <img className="icon" src={AGRIBANK}  alt=''/>
           </Link>
-          <Link >
+          <Link to=''>
             <img className="icon" src={VIETTINBANK} alt=''/>
           </Link>
-          <Link>
+          <Link to=''>
             <img className="icon" src={zalopay}  alt=''/>
           </Link>
-          <Link >
+          <Link to=''>
             <img className="icon" src={momo} alt=''/>
           </Link>
         </div>
         <div className="footer__item">
           <h3>Mobile App</h3>
-          <Link target="_blank" href="#">
+          <Link target="_blank" to=''>
             <img className="iconapp" src={apple} alt=''/>
           </Link>
-          <Link target="_blank" href="#">
+          <Link target="_blank" to=''>
             <img className="iconapp" src={android} alt=''/>
           </Link>
         </div>
         <div className="footer__item">
           <h3 className="social">Social</h3>
-          <Link target="_blank" href="#">
+          <Link target="_blank" to=''>
             <img className="iconapp" src={facebook} alt=''/>
           </Link>
-          <Link target="_blank" href="#">
+          <Link target="_blank" to=''>
             <img className="iconapp" src={zalo} alt='' />
           </Link>
         </div>
       </div>
-      <hr class="hrFooter"></hr>
+      <hr className="hrFooter"></hr>
     </section>
   );
 }

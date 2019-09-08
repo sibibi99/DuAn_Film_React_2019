@@ -13,8 +13,9 @@ export const dangNhapAction = (nguoiDung, history) =>{
             //Đăng nhập thành công sẽ lưu vào storage token và thông tin người dung
             localStorage.setItem(config.accessToken,result.data.accessToken);
             localStorage.setItem(config.userLogin, JSON.stringify(result.data))
-            console.log(result.data.maLoaiNguoiDung);
-    
+            console.log(result.data);
+            localStorage.setItem('isLogin', true)
+            
             
             
             //if resul laf ==maloi khac hang thi day ra dang chu
@@ -26,10 +27,10 @@ export const dangNhapAction = (nguoiDung, history) =>{
                 history.push('/') 
                 }
                 
-
             dispatch({
                 type:types.DANG_NHAP,
-                isLogin:true
+                isLogin:true,
+
             })
         }).catch(error=>{
             dispatch({

@@ -2,6 +2,8 @@ import * as types from "./constants";
 import axios from "axios";
 import * as config from "../../common/Config/Config";
 import { getAPI } from "../../common/utils/axios";
+import Swal from "sweetalert2";
+
 
 export const layDanhSachPhimAction = () => {
   return async dispatch => {
@@ -22,10 +24,39 @@ export const layDanhSachPhimAction = () => {
 };
 
 export const themPhimAction = (phim) => {
-  console.log(phim);
+
   return dispatch => {
     let token = localStorage.getItem("accessToken");
-    // console.log(token);
+    axios({
+      url: config.domain + "QuanLyPhim/ThemPhim",
+      method: "POST",
+      data: phim,
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    })
+    .then(result => {
+      // Đóng Form Lại Lại
+      document.getElementById("reset").click();
 
+        // Văng SweetAler lên
+        Swal.fire({
+          type: "success",
+          title: "Thêm Phim Thành Công",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        // Refresh lai state
+        dispatch(layDanhSachPhimAction());
+        console.log('Them 0k');
+      
+      
+    
+    })
+    .catch(error => {
+      // Đưa lỗi ra form
+      console.log(error.response.data);
+      
+    });
   };
 };

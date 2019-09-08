@@ -13,7 +13,8 @@ import '../../Assets/css/theme.css'
         super(props);
         this.state = {
             taiKhoan:'',
-            matKhau:''
+            matKhau:'',
+            isLogin: false
         }
     }
     handleInput = (e) =>{

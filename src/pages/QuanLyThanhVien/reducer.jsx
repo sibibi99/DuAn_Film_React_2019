@@ -13,12 +13,11 @@ const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
       state.DSND = action.DSND;
       return { ...state };
     }
-    // eslint-disable-next-line no-duplicate-case
     case types.XU_LY_ERROR: {
       state.Error = action.Error;
       return { ...state };
     }
-
+  
     default:
   }
   return { ...state };

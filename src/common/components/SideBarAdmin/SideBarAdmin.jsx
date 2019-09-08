@@ -7,7 +7,7 @@ export default function SideBarAdmin() {
   return (
 <aside className="menu-sidebar d-none d-lg-block">
   <div className="logo">
-    <Link to='admin'>
+    <Link to='/admin'>
       <img src={Logo } alt="Fox Admin" />
     </Link>
   </div>

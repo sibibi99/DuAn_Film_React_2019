@@ -10,7 +10,7 @@ import TrangChu from './pages/DuAnDatVePhim/TrangChu';
 import TrangChiTiet from './pages/DuAnDatVePhim/TrangChiTiet';
 import TrangDatVe from './pages/DuAnDatVePhim/TrangDatVe';
 import AdminTemplate from './templates/AdminTemplate';
-import DangKy from './pages/DangKy/DangKy';
+// import DangKy from './pages/DangKy/DangKy';
 import AdminPage from './pages/AdminPage/AdminPage';
 import QuanLyPhim from './pages/QuanLyPhim/QuanLyPhim';
 import QuanLyDatVe from './pages/QuanLyDatVe/QuanLyDatVe';

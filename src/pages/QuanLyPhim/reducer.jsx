@@ -10,6 +10,10 @@ const QuanLyPhimReducer = (state = stateDefault, action) => {
       state.DSP = action.DSP;
       return { ...state };
     }
+    case types.THEM_PHIM: {
+      state.DSP = action.DSP;
+      return { ...state };
+    }
 
     default:
   }
