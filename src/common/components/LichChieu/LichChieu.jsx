@@ -24,10 +24,13 @@ const responsive = {
 
 export default class LichChieu extends Component {
 
-
-  state = {
+constructor(props){
+  super(props);
+  this.state = {
     active : 'one'
   }
+
+}
 
 
 render() {
@@ -40,8 +43,8 @@ render() {
           onChange={(tabId) => this.setState({active: tabId})}
         >
           <TabList className='lichchieu__menu'>
-            <Tab className= { this.state.active === 'one' && 'tabActive'}  tabFor="one">Dang Chieu</Tab>
-            <Tab className= { this.state.active === 'two' && 'tabActive'}  tabFor="two">Sap Chieu</Tab>
+            <Tab className= { this.state.active === 'one' && 'tabActive'}  tabFor="one">Đang Chiếu</Tab>
+            <Tab className= { this.state.active === 'two' && 'tabActive'}  tabFor="two">Sắp Chiếu</Tab>
           </TabList>
           <TabPanel tabId="one">
             <div className="lichchieu__item">

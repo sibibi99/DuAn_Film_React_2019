@@ -1,9 +1,6 @@
 import * as types from "./constants";
 
 const stateDefault = {
-  isLogin: localStorage.getItem("isLogin")
-    ? localStorage.getItem("isLogin")
-    : false,
   DSND: [],
   Error: ''
 };

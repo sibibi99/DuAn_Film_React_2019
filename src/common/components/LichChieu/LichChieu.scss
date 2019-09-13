@@ -23,6 +23,15 @@
   .lichchieu__content{
     width: 80%;
     margin: 0 auto;
+    .lichchieu__menu{
+      .rwt__tab {
+        background-color: $white;
+        border-radius: 5px;
+      }
+      .tabActive{
+        background-color: $orange;
+      }
+    }
     .owl-carousel{
       margin-top: 2rem;
       position: relative;
@@ -34,17 +43,7 @@
         color: $orange;
         width: 100%;
         display: block;
-        button{
-          box-shadow: none !important;
-          padding: 0;
-          min-width: 0;
-          &:hover{
-            background-color: transparent;
-            border: none;
-          }
-
-
-        }
+      
     
           .owl-prev{
             position: absolute !important;

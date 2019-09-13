@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import './Header.scss';
 import { connect } from "react-redux";
+import { checkLogin } from '../../../pages/Login/action'
 import { withRouter } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
 import Logo from '../../../Assets/img/fox.png'
@@ -11,7 +12,7 @@ library.add(faBars, faUserCircle)
 
  function Header(props) {
    console.log(props);
-   
+
 
   const Menu = () => {
     let x = document.getElementById('Hide');
@@ -32,25 +33,28 @@ library.add(faBars, faUserCircle)
   }
   const LogOut = () => {
     localStorage.removeItem('userLogin');
-    props.history.push('/');
+    // Gọi check lại đăng nhập
+    props.checkDangNhap()
   }
-
-  // Status cho dang nhap
-  const [isStatus, setStatus] = useState(props.isLogin)
-  console.log(isStatus);
-
-
+    // Kiem tra Dang nhap - Neu F5 van kiem tra dc;
+    useEffect(() => {
+      props.checkDangNhap();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+  
   const dangNhapStatus = () => {
 
-    if (isStatus === true) {
-      return ( <div><FontAwesomeIcon icon={faUserCircle} className='icon' size="2x" /> Hi Si NGuyen
-      <button className='btn btn-warning' onClick={() => LogOut()}>LogOut</button></div>
-      )
+    if (props.isLogin === true) {
+      return ( <div >
+                   Xin chào:  <strong className='mr-2'>{props.nameId}</strong>
+                  <button className='btn btn-danger mr-2' >Quản Lý Vé</button>
+                  <button className='btn btn-warning' onClick={() => LogOut()}>LogOut</button>
+              </div>
+              )
     } else {
       return <NavLink to='login' className='header__login'><FontAwesomeIcon icon={faUserCircle} className='icon' size="2x" /> Đăng Nhập</NavLink>
     }
   }
-
 
   return (
     <section className="header">
@@ -82,10 +86,17 @@ library.add(faBars, faUserCircle)
 
 // Đưa dữ liệu trên Reducer xuống
 const mapStateToProp = state => {
-  console.log(state.QuanLyNguoiDungReducer.isLogin);
   return {
-    isLogin: state.QuanLyNguoiDungReducer.isLogin
+    isLogin: state.LoginReducer.isLogin,
+    nameId: state.LoginReducer.nameId
+  };
+};
+const mapDispathToProps = dispatch => {
+  return {
+    checkDangNhap: () => {
+      dispatch(checkLogin());
+    }
   };
 };
 
-export default (withRouter,connect(mapStateToProp,null))(Header);
+export default (withRouter,connect(mapStateToProp,mapDispathToProps))(Header);
