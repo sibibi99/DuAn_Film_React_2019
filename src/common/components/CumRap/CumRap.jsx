@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './CumRap.scss';
 import { connect } from "react-redux";
-import { layDanhSachHeThongRapAction, layThongTinCumRapAction } from './action'
+import { layDanhSachHeThongRapAction, layThongTinCumRapAction, layMangPhimAction } from './action'
 
 
 class CumRap extends Component {
@@ -9,6 +9,7 @@ class CumRap extends Component {
   componentDidMount() {
     this.props.layDanhSachHeThongRap();
     this.props.layThongTinCumRap('BHDStar')
+    this.props.layPhim([0])
   }
   
   render() {
@@ -31,11 +32,11 @@ class CumRap extends Component {
             {this.props.CUMRAP.map((cumrap, index) => {
               return (<Fragment>
                 <div className="col-md-4 cumrap__content--cumrap">
-                  <ul key={index} onClick={() => { this.props.layThongTinLichChieu(cumrap.maHeThongRap) }}>
+                  <ul key={index} onClick = {() => {this.props.layPhim(cumrap.lstCumRap[0].danhSachPhim)}}>
                     {cumrap.lstCumRap.map((list, index) => {
                       // Duyet listCumRap
                       return (
-                        <div key={index} onClick = {(dsPhim) => {this.props.layPhim(list.danhSachPhim)}}>
+                        <div key={index} >
                           <strong> {list.tenCumRap} </strong>
                           <p> {list.diaChi} </p>
                           {/* <p>{list.danhSachPhim}</p> */}
@@ -47,6 +48,17 @@ class CumRap extends Component {
                 </div>
                 <div className="col-md-6">
                 {/* Đổ dsPhim ra đây */}
+                
+                  {this.props.MANGPHIM.map((lichChieu, index) => {
+                    return (
+                      <ul key = {index}>
+                        <li>{lichChieu.tenPhim}</li>
+                        <li>{lichChieu.giaVe}</li>
+                      </ul>
+                    )
+                  })}
+                  
+                
                 </div>
               </Fragment>
               )
@@ -66,7 +78,7 @@ const mapStateToProp = state => {
   return {
     DSR: state.QuanLyHeThongRapReducer.DSR,
     CUMRAP: state.QuanLyHeThongRapReducer.CUMRAP,
-    LICHCHIEU: state.QuanLyHeThongRapReducer.LICHCHIEU
+    MANGPHIM: state.QuanLyHeThongRapReducer.MANGPHIM
   };
 };
 const mapDispathToProps = dispatch => {
@@ -76,7 +88,11 @@ const mapDispathToProps = dispatch => {
     },
     layThongTinCumRap: (maHeThongRap) => {
       dispatch(layThongTinCumRapAction(maHeThongRap));
-    }
+    },
+    layPhim: (mangPhim) => {
+      dispatch(layMangPhimAction(mangPhim));
+    },
+    
   };
 };
 

@@ -3,7 +3,7 @@ import * as types from "./constant";
 const stateDefault = {
     DSR: [],
     CUMRAP: [],
-    LICHCHIEU: []
+    MANGPHIM: []
 };
 const QuanLyHeThongRapReducer = (state = stateDefault, action) => {
   switch (action.type) {
@@ -13,10 +13,11 @@ const QuanLyHeThongRapReducer = (state = stateDefault, action) => {
     }
     case types.LAY_THONG_TIN_CUM_RAP: {
       state.CUMRAP = action.CUMRAP;
+      state.LICHCHIEU = action.LICHCHIEU;
       return { ...state };
     }
-    case types.LAY_THONG_TIN_LICH_CHIEU: {
-      state.LICHCHIEU = action.LICHCHIEU;
+    case types.LAY_MANG_PHIM: {
+      state.MANGPHIM = action.MANGPHIM;
       return { ...state };
     }
 

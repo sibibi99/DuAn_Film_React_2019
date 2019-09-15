@@ -17,8 +17,6 @@ export const layDanhSachHeThongRapAction = () => {
       dispatch({
         type: types.LAY_DANH_SACH_HE_THONG_RAP,
         DSR: result.data,
-      
-        
       });
     } catch (error) {
       // Call api fail sẽ nhảy vào đây
@@ -29,9 +27,7 @@ export const layDanhSachHeThongRapAction = () => {
 export const layThongTinCumRapAction = (maHeThongRap) => {
   return async dispatch => {
     const url = 
-      config.domain + "QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=" + maHeThongRap;
-    
-      
+      config.domain + "QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=" + maHeThongRap;  
     // Dùng try catch để bắt lỗi
     try {
       const result = await getAPI(url);
@@ -40,13 +36,25 @@ export const layThongTinCumRapAction = (maHeThongRap) => {
       dispatch({
         type: types.LAY_THONG_TIN_CUM_RAP,
         CUMRAP: result.data,
-      
+        LICHCHIEU: result.data[0].lstCumRap.danhSachPhim
         
       });
     } catch (error) {
       // Call api fail sẽ nhảy vào đây
       // console.log(error.response);
     }
+  };
+};
+export const layMangPhimAction = (mangPhim) => {
+  return async dispatch => {    
+    // console.log(mangPhim);
+    
+      dispatch({
+        type: types.LAY_MANG_PHIM,
+        MANGPHIM: mangPhim
+        
+      });
+   
   };
 };
 

@@ -11,7 +11,7 @@ import { faBars, faUserCircle} from '@fortawesome/free-solid-svg-icons';
 library.add(faBars, faUserCircle)
 
  function Header(props) {
-   console.log(props);
+  //  console.log(props);
 
 
   const Menu = () => {
